@@ -1,2 +1,1 @@
-This project is meant to be the downloader for ther other script once a new pc is put into windows. The goal of this script
-is to seamlessly download and run the other installer from a file service on the internet, or the file server.
+NO LONGER IMPORTANT
