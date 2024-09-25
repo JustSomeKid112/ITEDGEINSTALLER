@@ -19,6 +19,12 @@ class ReadJsonFile
     static void Main()
     {
         //Download the Links File
+
+        if (Directory.Exists(@"C:\itedge")==false)
+        {
+            Directory.CreateDirectory(@"C:\itedge");
+        }
+
         WebClient wc = new WebClient();
         wc.DownloadFile(@"https://raw.githubusercontent.com/JustSomeKid112/ITEDGEINSTALLER/main/Links.json", @"C:\itedge\Links.json");
         
@@ -66,8 +72,12 @@ class ReadJsonFile
         Console.WriteLine("DONE!");
 
         //Adobe
-        Console.WriteLine("Installing Adobe");
-        Process.Start(@"C:\itedge\Adobe.exe");
+        Console.WriteLine("Installing Adobe.");
+        inputFile = @"C:\itedge\Adobe.exe";
+        installer.Arguments = "/Sall";
+        installer.FileName = inputFile;
+        Process.Start(installer);
+        Console.WriteLine("DONE!");
         
 
 
